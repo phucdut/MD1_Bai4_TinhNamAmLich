@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Năm Âm Lịch Từ Năm Dương Lịch</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif, Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 100px 50px;
+            text-align: center;
+        }
+
+        h2 {
+            color: black;
+        }
+
+        div>input,
+        div>button {
+            margin-top: 25px;
+            height: 25px;
+        }
+
+        #display {
+            margin-top: 25px;
+            font-size: 20px;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+
+    <h2>Tính Năm Âm Lịch Từ Năm Dương Lịch</h2>
+
+
+    <input type="number" id="namDuongLich" placeholder="Nhập năm dương lịch" size="30px">
+    <button type="button" id="btn" onclick="tinhNam()">Tính năm</button>
+
+    <p id="display"></p>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
+<script>
+    let namDuongLich = document.getElementById('namDuongLich'),
+        display = document.getElementById('display');
+
+    let can = '',
+        chi = '',
+        sub = 'Năm âm lịch là';
+
+    function tinhNam() {
+
+        switch (namDuongLich.value % 10) {
+            case 0:
+                can = 'Canh';
+                break;
+            case 1:
+                can = 'Tân';
+                break;
+            case 2:
+                can = 'Nhâm';
+                break;
+            case 3:
+                can = 'Quý';
+                break;
+            case 4:
+                can = 'Giáp';
+                break;
+            case 5:
+                can = 'Ất';
+                break;
+            case 6:
+                can = 'Bính';
+                break;
+            case 7:
+                can = 'Đinh';
+                break;
+            case 8:
+                can = 'Mậu';
+                break;
+            case 9:
+                can = 'Kỷ';
+        }
+
+        switch (namDuongLich.value % 12) {
+            case 0:
+                chi = 'Thân';
+                break;
+            case 1:
+                chi = 'Dậu';
+                break;
+            case 2:
+                chi = 'Tuất';
+                break;
+            case 3:
+                chi = 'Hợi';
+                break;
+            case 4:
+                chi = 'Tý';
+                break;
+            case 5:
+                chi = 'Sửu';
+                break;
+            case 6:
+                chi = 'Dần';
+                break;
+            case 7:
+                chi = 'Mẹo';
+                break;
+            case 8:
+                chi = 'Thìn';
+                break;
+            case 9:
+                chi = 'Tỵ';
+                break;
+            case 10:
+                chi = 'Ngọ';
+                break;
+            case 11:
+                chi = 'Mùi';
+        }
+
+        display.innerHTML = `${sub} ${can} ${chi}`;
+    }
+</script>
